@@ -57,12 +57,12 @@ public class TestingUserRegProblem {
     @Test
     public void testPassword_MustReturnTrue() {
         UserRegistration userRegistration = new UserRegistration();
-        boolean isPasswordValid = userRegistration.checkPassword("abcdefghi");
+        boolean isPasswordValid = userRegistration.checkPassword("Abcdefghi");
         Assert.assertTrue(isPasswordValid);
     }
     public void testPassword_MustReturnFalse() {
         UserRegistration userRegistration = new UserRegistration();
-        boolean isPasswordInValid = userRegistration.checkPassword("abcd");
+        boolean isPasswordInValid = userRegistration.checkPassword("abcdefghi");
         Assert.assertTrue(isPasswordInValid);
     }
 }
