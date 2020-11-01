@@ -63,6 +63,6 @@ public class TestingUserRegProblem {
     public void testPassword_MustReturnFalse() {
         UserRegistration userRegistration = new UserRegistration();
         boolean isPasswordInValid = userRegistration.checkPassword("abcd");
-        Assert.assertTrue(isPasswordInValid);
+        Assert.assertFalse(isPasswordInValid);
     }
 }
