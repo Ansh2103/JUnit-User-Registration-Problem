@@ -2,9 +2,7 @@ import org.junit.Assert;
 import org.junit.Test;
 
 public class TestingUserRegProblem {
-
     @Test
-
     public void testingFirstName() {
         UserRegistration userRegistration = new UserRegistration();
         boolean isFNameValid = userRegistration.checkFName("Shubh");
@@ -29,5 +27,18 @@ public class TestingUserRegProblem {
         UserRegistration userRegistration = new UserRegistration();
         boolean isLnameINValid = userRegistration.Lname("kumar");
         Assert.assertFalse(isLnameINValid);
+    }
+
+    @Test
+    public void testEmailId_MustReturnTrue() {
+        UserRegistration userRegistration = new UserRegistration();
+        boolean isEmailValid = userRegistration.checkEmail("swyam007.sm@gmail.com");
+        Assert.assertTrue(isEmailValid);
+    }
+
+    public void testEmailId_MustReturnFalse() {
+        UserRegistration userRegistration = new UserRegistration();
+        boolean isEmailInvalid = userRegistration.checkEmail("swayam@.com");
+        Assert.assertFalse(isEmailInvalid);
     }
 }
