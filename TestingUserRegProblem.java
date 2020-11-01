@@ -22,7 +22,7 @@ public class TestingUserRegProblem {
         boolean isLnameValid = userRegistration.Lname("Kumar");
         Assert.assertTrue(isLnameValid);
     }
-
+    @Test
     public void testLastNameValidMustReturnFalse() {
         UserRegistration userRegistration = new UserRegistration();
         boolean isLnameINValid = userRegistration.Lname("kumar");
@@ -35,7 +35,7 @@ public class TestingUserRegProblem {
         boolean isEmailValid = userRegistration.checkEmail("swyam007.sm@gmail.com");
         Assert.assertTrue(isEmailValid);
     }
-
+    @Test
     public void testEmailId_MustReturnFalse() {
         UserRegistration userRegistration = new UserRegistration();
         boolean isEmailInvalid = userRegistration.checkEmail("swayam@.com");
@@ -48,6 +48,7 @@ public class TestingUserRegProblem {
         boolean isPhoneNumberValid = userRegistration.checkPhoneNum("91 7903990740");
         Assert.assertTrue(isPhoneNumberValid);
     }
+    @Test
     public void testPhoneNumber_MustReturnFalse() {
         UserRegistration userRegistration = new UserRegistration();
         boolean isPhoneNumberInValid = userRegistration.checkPhoneNum("7903990740");
@@ -57,12 +58,13 @@ public class TestingUserRegProblem {
     @Test
     public void testPassword_MustReturnTrue() {
         UserRegistration userRegistration = new UserRegistration();
-        boolean isPasswordValid = userRegistration.checkPassword("Abcdefg89");
+        boolean isPasswordValid = userRegistration.checkPassword("Abc@123gjyg");
         Assert.assertTrue(isPasswordValid);
     }
+    @Test
     public void testPassword_MustReturnFalse() {
         UserRegistration userRegistration = new UserRegistration();
-        boolean isPasswordInValid = userRegistration.checkPassword("aAbcdefghi");
-        Assert.assertTrue(isPasswordInValid);
+        boolean isPasswordInValid = userRegistration.checkPassword("abcdefg");
+        Assert.assertFalse(isPasswordInValid);
     }
 }
