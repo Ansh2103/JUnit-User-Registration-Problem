@@ -53,4 +53,16 @@ public class TestingUserRegProblem {
         boolean isPhoneNumberInValid = userRegistration.checkPhoneNum("7903990740");
         Assert.assertFalse(isPhoneNumberInValid);
     }
+
+    @Test
+    public void testPassword_MustReturnTrue() {
+        UserRegistration userRegistration = new UserRegistration();
+        boolean isPasswordValid = userRegistration.checkPassword("abcdefghi");
+        Assert.assertTrue(isPasswordValid);
+    }
+    public void testPassword_MustReturnFalse() {
+        UserRegistration userRegistration = new UserRegistration();
+        boolean isPasswordInValid = userRegistration.checkPassword("abcd");
+        Assert.assertTrue(isPasswordInValid);
+    }
 }
