@@ -67,4 +67,18 @@ public class TestingUserRegProblem {
         boolean isPasswordInValid = userRegistration.checkPassword("abcdefg");
         Assert.assertFalse(isPasswordInValid);
     }
+
+    @Test
+    public void mood_Analyser_Test_Happy() {
+        UserRegistration userRegistration = new UserRegistration();
+        String isMoodHappy = userRegistration.moodAnalyzer("Shubham", "Kumar", "91 7903990740", "swayam007.sm@gmail.com", "2103@Shubh");
+        Assert.assertEquals("HAPPY", isMoodHappy);
+    }
+
+    @Test
+    public void mood_Analyser_Test_Sad() {
+        UserRegistration userRegistration = new UserRegistration();
+        String isMoodSad = userRegistration.moodAnalyzer("shubham", "kumar", "7903990740", "swayam007@.com", "799235");
+        Assert.assertEquals("SAD", isMoodSad);
+    }
 }
