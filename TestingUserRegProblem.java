@@ -22,7 +22,8 @@ public class TestingUserRegProblem {
         boolean isLnameValid = userRegistration.Lname("Kumar");
         Assert.assertTrue(isLnameValid);
     }
-
+     
+    @Test
     public void testLastNameValidMustReturnFalse() {
         UserRegistration userRegistration = new UserRegistration();
         boolean isLnameINValid = userRegistration.Lname("kumar");
@@ -36,6 +37,7 @@ public class TestingUserRegProblem {
         Assert.assertTrue(isEmailValid);
     }
 
+    @Test
     public void testEmailId_MustReturnFalse() {
         UserRegistration userRegistration = new UserRegistration();
         boolean isEmailInvalid = userRegistration.checkEmail("swayam@.com");
