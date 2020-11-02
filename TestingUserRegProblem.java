@@ -4,7 +4,6 @@ import org.junit.Test;
 public class TestingUserRegProblem {
 
     @Test
-
     public void testingFirstName() {
         UserRegistration userRegistration = new UserRegistration();
         boolean isFNameValid = userRegistration.checkFName("Shubh");
@@ -25,6 +24,7 @@ public class TestingUserRegProblem {
         Assert.assertTrue(isLnameValid);
     }
 
+    @Test
     public void testLastNameValidMustReturnFalse() {
         UserRegistration userRegistration = new UserRegistration();
         boolean isLnameINValid = userRegistration.Lname("kumar");
