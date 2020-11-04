@@ -1,13 +1,17 @@
+import javax.naming.Name;
+
 public class UserRegistration {
 
-    private static String nameFormat = "[A-Z][a-z]{2,}";
-    private static String emailFormat = "^[0-9a-zA-Z]+([._+-][0-9a-zA-Z]+)*[@][0-9A-Za-z]+([.][a-zA-Z]{2,4})*$";
-    private static String mobileFormat = "^[0-9]{1,2}[ ][0-9]{10}$";
-    private static String passwordFormat = "^(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*[*.!@#$%^&(){}:'<>,.>/~`_+=|].).{8,}$";
+    private static final String nameFormat = "[A-Z][a-z]{2,}";
+    private static final String emailFormat = "^[0-9a-zA-Z]+([._+-][0-9a-zA-Z]+)*[@][0-9A-Za-z]+([.][a-zA-Z]{2,4})*$";
+    private static final String mobileFormat = "^[0-9]{1,2}[ ][0-9]{10}$";
+    private static final String passwordFormat = "^(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*[*.!@#$%^&(){}:'<>,.>/~`_+=|].).{8,}$";
+
+    UserDetailValidationFunctionality userDetailValidationFunctionality = (x, y) -> x.matches(y);
 
     public String checkFName(String fName) throws InvalidDetailExceptions {
         try {
-            if(fName.matches(nameFormat)){
+            if(userDetailValidationFunctionality.validateDetails(fName, nameFormat) == true){
                 return "Success";
             }
             else {
@@ -20,7 +24,7 @@ public class UserRegistration {
 
     public String checkLName(String lName) throws InvalidDetailExceptions {
         try {
-            if(lName.matches(nameFormat)){
+            if(userDetailValidationFunctionality.validateDetails(lName, nameFormat) == true){
                 return "Success";
             }
             else {
@@ -35,7 +39,7 @@ public class UserRegistration {
 
     public String checkEmail(String emailId) throws InvalidDetailExceptions {
         try {
-            if (emailId.matches(emailFormat)) {
+            if (userDetailValidationFunctionality.validateDetails(emailId, emailFormat) == true ) {
                 return "Success";
             }
             else {
@@ -49,7 +53,7 @@ public class UserRegistration {
 
     public String checkPhoneNumber(String phoneNo) throws InvalidDetailExceptions {
         try {
-            if(phoneNo.matches(mobileFormat)) {
+            if(userDetailValidationFunctionality.validateDetails(phoneNo, mobileFormat) == true) {
                 return "Success";
             }
             else {
@@ -62,7 +66,7 @@ public class UserRegistration {
     }
     public String checkPassword(String passcode) throws InvalidDetailExceptions {
         try {
-            if (passcode.matches(passwordFormat)) {
+            if (userDetailValidationFunctionality.validateDetails(passcode, passwordFormat) == true) {
                 return "Success";
             }
             else {
@@ -75,22 +79,6 @@ public class UserRegistration {
         }
     }
 
-<<<<<<< HEAD
-    public boolean checkPassword(String password) {
-        return  (password.matches("^(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*[*.!@#$%^&(){}:'<>,.>/~`_+=|].).{8,}$"));
-    }
-
-    public String moodAnalyzer(String fName, String Lname, String phoneNum, String emailID, String password) {
-        if(checkFName(fName) == true && Lname(Lname) == true && checkEmail(emailID) == true && checkPhoneNum(phoneNum) == true && checkPassword(password) == true){
-            return "HAPPY";
-        }
-        else {
-            return "SAD";
-        }
-    }
-
-}
-=======
 
     public String moodAnalyse(String fName, String lName, String phoneNumber, String email, String password ) throws InvalidDetailExceptions {
         try{
@@ -108,5 +96,7 @@ public class UserRegistration {
 
     }
 
+
 }
->>>>>>> UC12/Custom_Exception
+
+

@@ -51,14 +51,9 @@ public class TestingUserRegProblem {
             Assert.assertEquals("Success" , islNameValid);
         }
     }
-<<<<<<< HEAD
-    @Test
-    public void testLastNameValidMustReturnFalse() {
-=======
 
     @Test
     public void testLastName_WhenValueIsInvalid_ShouldThrowInvalidException(){
->>>>>>> UC12/Custom_Exception
         UserRegistration userRegistration = new UserRegistration();
         try {
             userRegistration.checkLName("Kumar");
@@ -78,14 +73,9 @@ public class TestingUserRegProblem {
             Assert.assertEquals(InvalidDetailExceptions.ExceptionType.ENTERED_NULL, e.type);
         }
     }
-<<<<<<< HEAD
-    @Test
-    public void testEmailId_MustReturnFalse() {
-=======
 
     @Test
     public void testEmailId_WhenValueIsValid_ShouldReturnSuccess(){
->>>>>>> UC12/Custom_Exception
         UserRegistration userRegistration = new UserRegistration();
         String isEmailValid = null;
         try {
@@ -107,14 +97,9 @@ public class TestingUserRegProblem {
             Assert.assertEquals(InvalidDetailExceptions.ExceptionType.ENTERED_INVALID, e.type);
         }
     }
-<<<<<<< HEAD
-    @Test
-    public void testPhoneNumber_MustReturnFalse() {
-=======
 
     @Test
     public void testEmailId_WhenValueIsNull_ShouldThrowNullPointerException() {
->>>>>>> UC12/Custom_Exception
         UserRegistration userRegistration = new UserRegistration();
         try {
             userRegistration.checkEmail(null);
@@ -127,30 +112,6 @@ public class TestingUserRegProblem {
     @Test
     public void testMobileNum_WhenValueIsValid_ShouldReturnSuccess() {
         UserRegistration userRegistration = new UserRegistration();
-<<<<<<< HEAD
-        boolean isPasswordValid = userRegistration.checkPassword("Abc@123gjyg");
-        Assert.assertTrue(isPasswordValid);
-    }
-    @Test
-    public void testPassword_MustReturnFalse() {
-        UserRegistration userRegistration = new UserRegistration();
-        boolean isPasswordInValid = userRegistration.checkPassword("abcdefg");
-        Assert.assertFalse(isPasswordInValid);
-    }
-
-    @Test
-    public void mood_Analyser_Test_Happy() {
-        UserRegistration userRegistration = new UserRegistration();
-        String isMoodHappy = userRegistration.moodAnalyzer("Shubham", "Kumar", "91 7903990740", "swayam007.sm@gmail.com", "2103@Shubh");
-        Assert.assertEquals("HAPPY", isMoodHappy);
-    }
-
-    @Test
-    public void mood_Analyser_Test_Sad() {
-        UserRegistration userRegistration = new UserRegistration();
-        String isMoodSad = userRegistration.moodAnalyzer("shubham", "kumar", "7903990740", "swayam007@.com", "799235");
-        Assert.assertEquals("SAD", isMoodSad);
-=======
         String isPhoneValid = null;
         try {
             isPhoneValid = userRegistration.checkPhoneNumber("91 7903990740");
@@ -239,6 +200,5 @@ public class TestingUserRegProblem {
         catch (InvalidDetailExceptions e) {
             Assert.assertEquals("SAD", isMoodSad);
         }
->>>>>>> UC12/Custom_Exception
     }
 }
